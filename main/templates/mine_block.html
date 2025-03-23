@@ -2,19 +2,19 @@
 <html>
 <head>
     <title>Mine Block</title>
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <h1>Mine a Block</h1>
     <form method="post">
-        <label for="miner_pub">Miner Key:</label>
+        <label for="miner_pub">Miner Public Key:</label>
         <select id="miner_pub" name="miner_pub" required>
-
-
-
+            {% for pub_key, wallet in wallets.items() %}
+                <option value="{{ pub_key }}">{{ wallet.name }}</option>
+            {% endfor %}
         </select><br>
         <button type="submit">Mine</button>
     </form>
-    <a href="index.html">Back</a>
+    <a href="{{ url_for('index') }}">Back</a>
 </body>
 </html>

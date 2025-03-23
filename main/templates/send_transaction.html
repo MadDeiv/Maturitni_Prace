@@ -2,23 +2,32 @@
 <html>
 <head>
     <title>Send Transaction</title>
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>Send Transaction</h1>
-    <form method="post">
-        <label for="sender_pub">Sender Key:</label>
-        <select id="sender_pub" name="sender_pub" required>
-
-        </select><br>
-        <label for="receiver_pub">Receiver Key:</label>
-        <select id="receiver_pub" name="receiver_pub" required>
-
-        </select><br>
-        <label for="amount">Amount:</label>
-        <input type="number" id="amount" name="amount" step="0.01" required>
-        <button type="submit">Send</button>
-    </form>
-    <a href="index.html">Back</a>
+    <div class="container">
+        <h1>Send Transaction</h1>
+        <p>Enter the sender’s private key to sign the transaction.</p>
+        <form method="post">
+            <label for="sender_pub">Sender:</label>
+            <select id="sender_pub" name="sender_pub" required>
+                {% for pub_key, wallet in wallets.items() %}
+                    <option value="{{ pub_key }}">{{ wallet.name }}</option>
+                {% endfor %}
+            </select>
+            <label for="private_key">Sender Private Key:</label>
+            <input type="text" id="private_key" name="private_key" required>
+            <label for="receiver_pub">Receiver:</label>
+            <select id="receiver_pub" name="receiver_pub" required>
+                {% for pub_key, wallet in wallets.items() %}
+                    <option value="{{ pub_key }}">{{ wallet.name }}</option>
+                {% endfor %}
+            </select>
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" step="0.01" required>
+            <button type="submit">Send</button>
+        </form>
+        <a href="{{ url_for('index') }}">Back</a>
+    </div>
 </body>
 </html>

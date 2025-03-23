@@ -2,26 +2,25 @@
 <html>
 <head>
     <title>Your Private Key</title>
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <div class="container">
         <h1>Your New Wallet</h1>
-        <p>Wallet created: </p>
-        <p>Public Key:</p>
+        <p>Wallet created: {{ wallet.name }}</p>
+        <p>Public Key: {{ wallet.get_public_key()[:10] }}...</p>
         
         <div class="private-key-container">
             <p class="warning">WARNING: Never share your private key! Store it securely offline.</p>
-            <p>Your Private Key: <span id="privateKey" class="private-key">key</span></p>
+            <p>Your Private Key: <span id="privateKey" class="private-key">{{ private_key }}</span></p>
             <button onclick="copyToClipboard()">Copy to Clipboard</button>
             <p>Key will be hidden in <span id="countdown">10</span> seconds.</p>
         </div>
         
-        <a href="index.html">Back to Home</a>
+        <a href="{{ url_for('index') }}">Back to Home</a>
     </div>
 
     <script>
-        // Copy private key to clipboard
         function copyToClipboard() {
             const privateKey = document.getElementById('privateKey').innerText;
             navigator.clipboard.writeText(privateKey).then(() => {
@@ -29,7 +28,6 @@
             });
         }
 
-        // Countdown timer to hide the private key
         let timeLeft = 10;
         const countdown = document.getElementById('countdown');
         const privateKey = document.getElementById('privateKey');

@@ -1,0 +1,45 @@
+{
+    "blocks": [
+        {
+            "index": 0,
+            "timestamp": "2025-03-22 16:45:47",
+            "transactions": [],
+            "previous_hash": "0",
+            "nonce": 12147,
+            "block_description": "Genesis Block",
+            "merkle_root": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+    ],
+    "wallets": {
+        "6522b08bc5ede97acd49ed6d390e0147570d73768539b207039b1641964e2887ee3951ea96e8d54c443a89b0d4370f63ba01427469def2335ecdd406094c7a3a": {
+            "name": "blabla",
+            "balance": 0,
+            "public_key": "fdb56e0e092b9ab0a8315afc1706767b99063ccbf3ae7063ecd75fb6dbf9c404fa35ffde16e6c4658fb0ee8a2dacad6a92efdc411b637beddf366b5dacab012f"
+        },
+        "8cd34a14c663c01316a0812f85f23f92bb6e2f1cb659ffb294df9dc702926a48e5d8f2917faeeedd6e5c84172668dcd7122f882a51e5cdebba5a95c0277682e0": {
+            "name": "blabla",
+            "balance": 0,
+            "public_key": "f9ac02c077e87bf6a60dc352db1be6206646efbc6f92609c27da926554ec5df896ce0ae4ac7978e8e8b7a974afa51abff17edeac6d19aa4eb9a27e76559bd6c4"
+        },
+        "90f96fe085660da0d1541323a630d4fd4fcab7ba2e5eb00802b951b0026098502390dd996d48a01fbcd9cde2e5f2b57e1528da6518ffe1f154cb31a0a23df3fe": {
+            "name": "baba jaga",
+            "balance": 0,
+            "public_key": "1eae2de56d4701effcf9a2d8d953c030da05926e98c8f3578730c459a107641dc3d45f6d8c3f4be288beae78dda9302bcbc5c3c72c2a8665131cd9425ffc8726"
+        },
+        "348bb6810a0f5219ac3e4da3b2dbcff2d4d1917fb378fc5fcffe070b985aacccf0c758fae42a090f7c03300e964cec700f3c3bb580da1ede8059555538c5ace1": {
+            "name": "baba jaga",
+            "balance": 0,
+            "public_key": "64606f2dcd8ea41eb0c5bfbbe905d59e210ec1b1c729f1af11b5386d222f6d4c6e202b3968749a36e74c827870a902056a6675c23fc2a8bb5c70fe7add43ca25"
+        },
+        "aaed9f9dbefeb80021ee001e4e1afcaf42d88025cb38069131d6ec34782e5fb45095a6489484b154477214584adeddbad4f66133a057734bfcded2095843efc6": {
+            "name": "blabla",
+            "balance": 0,
+            "public_key": "dc53ea3c0d630fabd1662c451fed47ed74854cc6486f8478e7d12b362ca93bed7045c996b45db50122ac227269e74bf873d07ed7eeb8eb4fc888ac74787da03a"
+        },
+        "ba98ccf713f2b9d6a09a9de4e6797ede5fbb8c3757cc60692ee0d35bd8f47fb030a19d221c451a6e4322f64b176b4a73b1b65010c16433b967581533abeb0133": {
+            "name": "blabla",
+            "balance": 0,
+            "public_key": "f7adced2ce4e5ca7fb9ba98f67c64a75bb155b20cc6270cf867c05038380c2f40b0bfe978657be8e93ebb888298b950c2d2ef4228a7c87e90f18b529d3b93cb3"
+        }
+    }
+}

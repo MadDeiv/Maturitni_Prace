@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Create Wallet</title>
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <h1>Create a New Wallet</h1>
@@ -11,6 +11,6 @@
         <input type="text" id="name" name="name" required>
         <button type="submit">Create</button>
     </form>
-    <a href="index.html">Back</a>
+    <a href="{{ url_for('index') }}">Back</a>
 </body>
 </html>
