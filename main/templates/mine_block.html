@@ -5,16 +5,18 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>Mine a Block</h1>
-    <form method="post">
-        <label for="miner_pub">Miner Public Key:</label>
-        <select id="miner_pub" name="miner_pub" required>
-            {% for pub_key, wallet in wallets.items() %}
-                <option value="{{ pub_key }}">{{ wallet.name }}</option>
-            {% endfor %}
-        </select><br>
-        <button type="submit">Mine</button>
-    </form>
-    <a href="{{ url_for('index') }}">Back</a>
+    <div class="container">
+        <h1>Mine a New Block</h1>
+        <form method="post">
+            <label for="miner_pub">Miner:</label>
+            <select id="miner_pub" name="miner_pub" required>
+                {% for pub_key, wallet in wallets.items() %}
+                    <option value="{{ pub_key }}">{{ wallet.name }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Mine</button>
+        </form>
+        <a href="{{ url_for('index') }}">Back</a>
+    </div>
 </body>
 </html>

@@ -5,12 +5,14 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>Check Wallet Balance</h1>
-    <form method="post">
-        <label for="public_key">Public Key:</label>
-        <input type="text" id="public_key" name="public_key" required>
-        <button type="submit">Check</button>
-    </form>
-    <a href="{{ url_for('index') }}">Back</a>
+    <div class="container">
+        <h1>Check Wallet Balance</h1>
+        <form method="post">
+            <label for="public_key">Public Key:</label>
+            <input type="text" id="public_key" name="public_key" required>
+            <button type="submit">Check</button>
+        </form>
+        <a href="{{ url_for('index') }}">Back</a>
+    </div>
 </body>
 </html>

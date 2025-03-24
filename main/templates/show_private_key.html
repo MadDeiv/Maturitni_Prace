@@ -8,7 +8,10 @@
     <div class="container">
         <h1>Your New Wallet</h1>
         <p>Wallet created: {{ wallet.name }}</p>
-        <p>Public Key: {{ wallet.get_public_key()[:10] }}...</p>
+        <p>Public Key: <span class="pub-key" onclick="toggleKey(this)" 
+                             data-full="{{ wallet.get_public_key() }}">
+            {{ wallet.get_public_key()[:10] }}...
+        </span></p>
         
         <div class="private-key-container">
             <p class="warning">WARNING: Never share your private key! Store it securely offline.</p>
@@ -40,6 +43,16 @@
                 countdown.parentElement.style.display = 'none';
             }
         }, 1000);
+
+        function toggleKey(element) {
+            const fullKey = element.getAttribute('data-full');
+            const currentText = element.textContent.trim();
+            if (currentText.endsWith('...')) {
+                element.textContent = fullKey;  // Show full key
+            } else {
+                element.textContent = fullKey.slice(0, 10) + '...';  // Show truncated key
+            }
+        }
     </script>
 </body>
 </html>

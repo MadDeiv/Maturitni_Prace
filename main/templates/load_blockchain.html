@@ -5,12 +5,14 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>Load Blockchain</h1>
-    <form method="post">
-        <label for="filename">File Path:</label>
-        <input type="text" id="filename" name="filename" required>
-        <button type="submit">Load</button>
-    </form>
-    <a href="{{ url_for('index') }}">Back</a>
+    <div class="container">
+        <h1>Load Blockchain from File</h1>
+        <form method="post">
+            <label for="filename">File Path:</label>
+            <input type="text" id="filename" name="filename" required>
+            <button type="submit">Load</button>
+        </form>
+        <a href="{{ url_for('index') }}">Back</a>
+    </div>
 </body>
 </html>

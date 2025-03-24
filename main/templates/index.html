@@ -23,7 +23,8 @@
                     Public Key: <span class="pub-key" onclick="toggleKey(this)" 
                                      data-full="{{ wallet.get_public_key() }}">
                         {{ wallet.get_public_key()[:10] }}...
-                    </span>
+                    </span>,
+                    Balance: {{ wallet.balance }}
                 </li>
             {% endfor %}
         </ul>
