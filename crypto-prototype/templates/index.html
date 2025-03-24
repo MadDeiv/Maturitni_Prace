@@ -7,10 +7,10 @@
 <body>
     <div class="container">
         <h1>Cryptocurrency Prototype</h1>
-        {% with messages = get_flashed_messages(category_filter=["success", "error"]) %}
+        {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
-                    <p class="flash {{ 'success' if 'successfully' in message or 'created' in message or 'mined' in message else 'error' }}">{{ message }}</p>
+                    <p class="flash {{ 'success' if 'successfully' in message or 'created' in message or 'mined' in message or 'added' in message else 'error' }}">{{ message }}</p>
                 {% endfor %}
             {% endif %}
         {% endwith %}
