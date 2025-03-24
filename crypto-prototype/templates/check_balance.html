@@ -7,6 +7,13 @@
 <body>
     <div class="container">
         <h1>Check Wallet Balance</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <p class="flash {{ category }}">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
         <form method="post">
             <label for="public_key">Public Key:</label>
             <input type="text" id="public_key" name="public_key" required>

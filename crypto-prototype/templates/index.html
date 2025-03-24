@@ -7,10 +7,10 @@
 <body>
     <div class="container">
         <h1>Cryptocurrency Prototype</h1>
-        {% with messages = get_flashed_messages() %}
+        {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
-                {% for message in messages %}
-                    <p class="flash {{ 'success' if 'successfully' in message or 'created' in message or 'mined' in message or 'added' in message else 'error' }}">{{ message }}</p>
+                {% for category, message in messages %}
+                    <p class="flash {{ category }}">{{ message }}</p>
                 {% endfor %}
             {% endif %}
         {% endwith %}
@@ -21,9 +21,7 @@
                 <li>
                     Wallet: {{ wallet.name }}, 
                     Public Key: <span class="pub-key" onclick="toggleKey(this)" 
-                                     data-full="{{ wallet.get_public_key() }}">
-                        {{ wallet.get_public_key()[:10] }}...
-                    </span>,
+                                     data-full="{{ pub_key }}">{{ pub_key[:10] }}...</span>,
                     Balance: {{ wallet.balance }}
                 </li>
             {% endfor %}
@@ -48,9 +46,9 @@
             const fullKey = element.getAttribute('data-full');
             const currentText = element.textContent.trim();
             if (currentText.endsWith('...')) {
-                element.textContent = fullKey;  // Show full key
+                element.textContent = fullKey;
             } else {
-                element.textContent = fullKey.slice(0, 10) + '...';  // Show truncated key
+                element.textContent = fullKey.slice(0, 10) + '...';
             }
         }
     </script>

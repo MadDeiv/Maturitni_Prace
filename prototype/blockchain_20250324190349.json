@@ -1,0 +1,20 @@
+{
+    "blocks": [
+        {
+            "index": 0,
+            "timestamp": "2025-03-24 19:01:01",
+            "transactions": [],
+            "previous_hash": "0",
+            "nonce": 82511,
+            "block_description": "Genesis Block",
+            "merkle_root": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+    ],
+    "wallets": {
+        "356032fe7fcc6a67c08e0f6f914cf2178d02f6fe14a5c1deeb00e0866083a4c97546461af132b3cfa70bbf4d08dbc039a2854674c89548f87aeb817bc75f8a0e": {
+            "name": "blabla",
+            "balance": 0,
+            "public_key": "351b67b3549bd0f341cab5df8fc9ae87efeaf73a07b64f16abaf7b28059970ea3b199705241cc0e19158494f50fae7fed3de77a26424c886ed2a87d9952c737c"
+        }
+    }
+}
