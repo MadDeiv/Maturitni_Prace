@@ -6,7 +6,7 @@ import ecdsa  # Library for elliptic curve cryptography (ECDSA)
 
 class Block:
     """Represents a block in the blockchain."""
-    def __init__(self, index, timestamp, transactions, previous_hash, nonce=0, block_description="Block", merkle_root=None):
+    def __init__(self, index, timestamp, transactions, previous_hash, nonce=0, block_description="Block"):
         """Initialize a block with its properties."""
         self.index = index  # Block number in the chain (starts at 0 for genesis)
         self.timestamp = timestamp  # Time of block creation
@@ -14,7 +14,7 @@ class Block:
         self.previous_hash = previous_hash  # Hash of the previous block for chain integrity
         self.nonce = nonce  # Number used once for proof-of-work
         self.block_description = block_description  # Descriptive label for the block
-        self.merkle_root = merkle_root if merkle_root else self.calculate_merkle_root()  # Merkle tree root hash
+
 
     def __hash__(self):
         """Calculate the block’s hash based on its properties."""
@@ -24,7 +24,7 @@ class Block:
             "timestamp": self.timestamp,
             "previous_hash": self.previous_hash,
             "nonce": self.nonce,
-            "merkle_root": self.merkle_root,
+
             "block_description": self.block_description,
         }
         # Convert to JSON string, sort keys for consistency, encode to bytes, and hash with SHA-256
@@ -50,7 +50,7 @@ class Block:
                 f"Previous Hash: {self.previous_hash}\n"
                 f"Hash: {self.__hash__()}\n"
                 f"Nonce: {self.nonce}\n"
-                f"Merkle Root: {self.merkle_root}\n"
+
                 f"Transactions:{transactions_str}")
 
 class Transaction:
@@ -242,7 +242,7 @@ class Blockchain:
             # Create a new Block object with loaded data
             block = Block(
                 block_data["index"], block_data["timestamp"], transactions, block_data["previous_hash"],
-                block_data["nonce"], block_data["block_description"], block_data["merkle_root"]
+                block_data["nonce"], block_data["block_description"]
             )
             self.block_list.append(block)  # Add to the blockchain
 
