@@ -19,10 +19,10 @@
         <ul>
             {% for pub_key, wallet in wallets.items() %}
                 <li>
-                    Wallet: {{ wallet.name }}, 
+                    Name: {{ wallet.name }}, 
                     Public Key: <span class="pub-key" onclick="toggleKey(this)" 
-                                     data-full="{{ pub_key }}">{{ pub_key[:10] }}...</span>,
-                    Balance: {{ wallet.balance }}
+                                     data-full="{{ pub_key }}">{{ pub_key[:10] }}...</span>
+                    <button class="copy-btn" onclick="copyKey('{{ pub_key }}')">Copy</button>
                 </li>
             {% endfor %}
         </ul>
@@ -51,6 +51,15 @@
                 element.textContent = fullKey.slice(0, 10) + '...';
             }
         }
+
+        function copyKey(key) {
+        navigator.clipboard.writeText(key).then(() => {
+                alert("Public key copied to clipboard!");
+            })
+            .catch(err => {
+                console.error("Failed to copy: ", err);
+                alert("Failed to copy key.");
+            });}
     </script>
 </body>
 </html>

@@ -129,35 +129,27 @@ ul li {
 }
 
 .pub-key {
-    font-family: monospace;
-    color: #2980b9;
+    color: #859098;
     cursor: pointer;
-    text-decoration: underline;
+    
     font-size: 1em;
     word-wrap: break-word;
     display: inline-block;
     max-width: 100%;
 }
 .pub-key:hover {
-    color: #1f6391;
+    color: #646a6e;
 }
 
-@media (max-width: 600px) {
-    .container {
-        width: 95%;
-        padding: 15px;
-    }
-    h1, h2 {
-        font-size: 1.8em;
-    }
-    a, button {
-        padding: 8px 14px;
-        font-size: 0.95em;
-    }
-    input[type="text"], input[type="number"], select {
-        padding: 8px;
-    }
-    pre {
-        font-size: 0.9em;
-    }
+.copy-btn{
+    margin-left: 10px;
+    padding: 2px 8px;
+    border-color: #333;
+    border-radius: 6px;
+    color:#333;
+}
+
+.copy-btn:hover{
+    background: #8a8686;
+    color: #fff;
 }
