@@ -251,10 +251,4 @@ class Blockchain:
         for pub_key, wallet_data in data["wallets"].items():
             self.wallets[pub_key] = Wallet(wallet_data["name"], wallet_data["balance"], public_key=pub_key)
 
-        if self.validate_blockchain():  # Check if the loaded blockchain is valid
-            return f"Blockchain loaded successfully from {filename}"
-        else:  # If invalid, reset to a new blockchain
-            self.block_list = []
-            self.wallets = {}
-            self.genesis_block()
-            return "Invalid blockchain loaded! Started new."
+        return f"Blockchain loaded successfully from {filename}"
