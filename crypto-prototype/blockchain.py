@@ -199,17 +199,6 @@ class Blockchain:
         # Return balance if wallet exists, otherwise an error message
         return self.wallets[public_key].balance if public_key in self.wallets else "Wallet not found"
 
-    def validate_blockchain(self):
-        """Validate the integrity of the blockchain."""
-        for i in range(1, len(self.block_list)):  # Check each block after the genesis block
-            current = self.block_list[i]
-            prev = self.block_list[i - 1]
-            if current.previous_hash != prev.__hash__():  # Ensure chain linkage
-                return False
-            if current.__hash__()[:self.difficulty] != "0" * self.difficulty:  # Verify proof-of-work
-                return False
-        return True  # Return True if all checks pass
-
     def display_blockchain(self):
         """Return a string representation of the entire blockchain."""
         if not self.block_list:  # Handle empty blockchain case
