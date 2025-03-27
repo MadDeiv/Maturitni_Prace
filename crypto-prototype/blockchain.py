@@ -39,24 +39,7 @@ class Block:
             self.nonce += 1  # Increment nonce to change the hash
         return self.nonce  # Return the nonce that satisfies the condition
 
-    def calculate_merkle_root(self):
-        """Calculate the Merkle root of the transactions."""
-        # Hash each transaction into a list of SHA-256 hashes
-        tx_hashes = [hashlib.sha256(json.dumps(tx.to_dict(), sort_keys=True).encode()).hexdigest() 
-                     for tx in self.transactions]
-        if not tx_hashes:  # If no transactions, return hash of an empty string
-            return hashlib.sha256("".encode()).hexdigest()
-        while len(tx_hashes) > 1:  # Build the Merkle tree by pairing hashes
-            new_layer = []  # Store the next layer of hashes
-            for i in range(0, len(tx_hashes), 2):  # Process pairs of hashes
-                left = tx_hashes[i]  # Left hash
-                # Right hash; duplicate left if odd number of hashes
-                right = tx_hashes[i + 1] if i + 1 < len(tx_hashes) else left
-                # Combine and hash the pair
-                combined = hashlib.sha256((left + right).encode()).hexdigest()
-                new_layer.append(combined)
-            tx_hashes = new_layer  # Move to the next layer
-        return tx_hashes[0]  # Return the root hash
+
 
     def __str__(self):
         """Return a string representation of the block for display."""
