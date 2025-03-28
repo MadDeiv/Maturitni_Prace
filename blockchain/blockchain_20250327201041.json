@@ -1,0 +1,70 @@
+{
+    "blocks": [
+        {
+            "index": 0,
+            "timestamp": "2025-03-27 19:32:04",
+            "transactions": [],
+            "previous_hash": "0",
+            "nonce": 134824,
+            "block_description": "Genesis Block"
+        },
+        {
+            "index": 1,
+            "timestamp": "2025-03-27 20:02:30",
+            "transactions": [
+                {
+                    "sender": "0",
+                    "receiver": "a053f059a7d8c4695b03fab8d4edfe12e478d2daefe8ef1b0fc2ca0c06cf196dac42bd5dec294f9fd42f28768005723498be6b815c77e374af5bb94b26db6f61",
+                    "amount": 50,
+                    "signature": "6d696e696e675f726577617264"
+                }
+            ],
+            "previous_hash": "0000f3c1db59836031b1cb6c8232ae45354ea06f3587fb2d5eb7118568a837f6",
+            "nonce": 49107,
+            "block_description": "Block"
+        },
+        {
+            "index": 2,
+            "timestamp": "2025-03-27 20:06:35",
+            "transactions": [
+                {
+                    "sender": "a7cb9e2ad362d4c9ed5823886b8e5cae9cd365a0b5a39ae5f7c01ee2e93d3f95963520d30cce52ee9023cbbd4ec0f1fa898b94313841a1c695f63ca27c7e5928",
+                    "receiver": "ad9f45f33c4a886c4a54df46ce3c933b52a8c39ecae2e9608a41df6e99194eb01c620a97c00c3be3ba9e2a2d3e3152845cb23890437681d507a05f2380a16c94",
+                    "amount": 50.0,
+                    "signature": "76b6ac8441ec4f117301bf7d72606153a2eabae8be152a5b71f1bf016c8535a3d280f05de8edf32a182ca4e05e24a9ffbe82ab2b7cd38a4b69fd985ed42d76d8"
+                },
+                {
+                    "sender": "0",
+                    "receiver": "ad9f45f33c4a886c4a54df46ce3c933b52a8c39ecae2e9608a41df6e99194eb01c620a97c00c3be3ba9e2a2d3e3152845cb23890437681d507a05f2380a16c94",
+                    "amount": 50,
+                    "signature": "6d696e696e675f726577617264"
+                }
+            ],
+            "previous_hash": "000069852d0b219d5da4388b1f8a5208b184dd5deeb14e76f95700db2d3cd61f",
+            "nonce": 75339,
+            "block_description": "Block"
+        }
+    ],
+    "wallets": {
+        "ad9f45f33c4a886c4a54df46ce3c933b52a8c39ecae2e9608a41df6e99194eb01c620a97c00c3be3ba9e2a2d3e3152845cb23890437681d507a05f2380a16c94": {
+            "name": "User1",
+            "balance": 200.0,
+            "public_key": "ad9f45f33c4a886c4a54df46ce3c933b52a8c39ecae2e9608a41df6e99194eb01c620a97c00c3be3ba9e2a2d3e3152845cb23890437681d507a05f2380a16c94"
+        },
+        "a053f059a7d8c4695b03fab8d4edfe12e478d2daefe8ef1b0fc2ca0c06cf196dac42bd5dec294f9fd42f28768005723498be6b815c77e374af5bb94b26db6f61": {
+            "name": "User2",
+            "balance": 150,
+            "public_key": "a053f059a7d8c4695b03fab8d4edfe12e478d2daefe8ef1b0fc2ca0c06cf196dac42bd5dec294f9fd42f28768005723498be6b815c77e374af5bb94b26db6f61"
+        },
+        "a7cb9e2ad362d4c9ed5823886b8e5cae9cd365a0b5a39ae5f7c01ee2e93d3f95963520d30cce52ee9023cbbd4ec0f1fa898b94313841a1c695f63ca27c7e5928": {
+            "name": "User3",
+            "balance": 50.0,
+            "public_key": "a7cb9e2ad362d4c9ed5823886b8e5cae9cd365a0b5a39ae5f7c01ee2e93d3f95963520d30cce52ee9023cbbd4ec0f1fa898b94313841a1c695f63ca27c7e5928"
+        },
+        "f5a208be29a015461f4032265ccb3b632c2e64a0d0afa510ead8b45b7e9922cc87786c39e2ab70a3df46601e6be2ebe1d220a40082e146b7f93f2a735cc16419": {
+            "name": "User4",
+            "balance": 100,
+            "public_key": "f5a208be29a015461f4032265ccb3b632c2e64a0d0afa510ead8b45b7e9922cc87786c39e2ab70a3df46601e6be2ebe1d220a40082e146b7f93f2a735cc16419"
+        }
+    }
+}

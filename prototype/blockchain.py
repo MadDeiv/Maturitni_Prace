@@ -92,7 +92,7 @@ class Transaction:
 
 class Wallet:
     """Represents a user’s wallet with public and private keys."""
-    def __init__(self, name, balance=0, private_key=None, public_key=None):
+    def __init__(self, name, balance=100, private_key=None, public_key=None):
         """Initialize a wallet with a name, balance, and optional keys."""
         self.name = name  # Wallet owner’s name
         self.balance = balance  # Current balance in cryptocurrency units
