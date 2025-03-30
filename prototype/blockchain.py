@@ -128,7 +128,7 @@ class Blockchain:
         self.wallets = {}  # Dictionary mapping public keys to Wallet objects
         self.pending_transactions = []  # List of transactions waiting to be mined
         self.mining_reward = 50  # Reward given to miners for each block (in units)
-        self.difficulty = 4  # Number of leading zeros required for proof-of-work
+        self.difficulty = 8  # Number of leading zeros required for proof-of-work
         self.directory = "blockchain"  # Directory where blockchain files are saved
 
     def genesis_block(self):

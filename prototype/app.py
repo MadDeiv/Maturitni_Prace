@@ -105,5 +105,6 @@ def load_blockchain():
 
 if __name__ == '__main__':
     """Entry point for running the application."""
+    print("Starting the app...")
     blockchain.genesis_block()  # Create the genesis block when the app starts
     app.run(debug=True)  # Run the Flask app in debug mode on localhost:5000
