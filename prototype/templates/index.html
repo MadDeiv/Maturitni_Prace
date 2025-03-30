@@ -1,65 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Page title displayed in the browser tab -->
     <title>Cryptocurrency Prototype</title>
+    <!-- Link to external CSS stylesheet for styling -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <div class="container">
+        <!-- Main page heading -->
         <h1>Cryptocurrency Prototype</h1>
+        
+        <!-- Display flashed messages (e.g., success or error) from the Flask backend -->
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 {% for category, message in messages %}
+                    <!-- Render each message with its category as a class (e.g., 'success', 'error') -->
                     <p class="flash {{ category }}">{{ message }}</p>
                 {% endfor %}
             {% endif %}
         {% endwith %}
         
+        <!-- Section for displaying wallets -->
         <h2>Wallets</h2>
         <ul>
+            <!-- Iterate over the wallets dictionary to list each wallet -->
             {% for pub_key, wallet in wallets.items() %}
                 <li>
+                    <!-- Display wallet name and truncated public key -->
                     Name: {{ wallet.name }}, 
                     Public Key: <span class="pub-key" onclick="toggleKey(this)" 
                                      data-full="{{ pub_key }}">{{ pub_key[:10] }}...</span>
+                    <!-- Button to copy the full public key -->
                     <button class="copy-btn" onclick="copyKey('{{ pub_key }}')">Copy</button>
                 </li>
             {% endfor %}
         </ul>
         
+        <!-- Section for displaying the blockchain -->
         <h2>Blockchain</h2>
+        <!-- Render the blockchain data in a preformatted text block -->
         <pre>{{ blockchain }}</pre>
         
+        <!-- Section for available actions -->
         <h2>Actions</h2>
+        <!-- Links to various application routes -->
         <a href="{{ url_for('create_wallet') }}">Create Wallet</a>
         <a href="{{ url_for('check_balance') }}">Check Balance</a>
         <a href="{{ url_for('send_transaction') }}">Send Transaction</a>
         <a href="{{ url_for('mine_block') }}">Mine Block</a>
         <a href="{{ url_for('load_blockchain') }}">Load Blockchain</a>
+        <!-- Inline form to save the blockchain -->
         <form method="post" action="{{ url_for('save_blockchain') }}" style="display:inline;">
             <button type="submit">Save Blockchain</button>
         </form>
     </div>
 
+    <!-- JavaScript for interactivity -->
     <script>
+        // Function to toggle between showing full public key or truncated version
         function toggleKey(element) {
             const fullKey = element.getAttribute('data-full');
             const currentText = element.textContent.trim();
             if (currentText.endsWith('...')) {
-                element.textContent = fullKey;
+                element.textContent = fullKey; // Show full key
             } else {
-                element.textContent = fullKey.slice(0, 10) + '...';
+                element.textContent = fullKey.slice(0, 10) + '...'; // Show truncated key
             }
         }
 
+        // Function to copy a public key to the clipboard
         function copyKey(key) {
-        navigator.clipboard.writeText(key).then(() => {
-                alert("Public key copied to clipboard!");
+            navigator.clipboard.writeText(key).then(() => {
+                alert("Public key copied to clipboard!"); // Success message
             })
             .catch(err => {
-                console.error("Failed to copy: ", err);
-                alert("Failed to copy key.");
-            });}
+                console.error("Failed to copy: ", err); // Log error to console
+                alert("Failed to copy key."); // Error message for user
+            });
+        }
     </script>
 </body>
 </html>

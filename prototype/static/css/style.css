@@ -1,155 +1,164 @@
+/* General body styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 20px;
-    color: #333;
-    font-size: 1.1em;
+    font-family: Arial, sans-serif; /* Use Arial or fallback to sans-serif */
+    background-color: #f4f4f9; /* Light gray background */
+    margin: 0; /* Remove default margin */
+    padding: 20px; /* Add padding around the body */
+    color: #333; /* Dark gray text color */
+    font-size: 1.1em; /* Slightly larger base font size */
 }
 
+/* Styling for headings */
 h1, h2 {
-    color: #2c3e50;
-    font-size: 2.2em;
-    margin: 15px 0;
+    color: #2c3e50; /* Dark blue-gray color for headings */
+    font-size: 2.2em; /* Larger font size for headings */
+    margin: 15px 0; /* Vertical margin around headings */
 }
 
+/* Container for main content */
 .container {
-    max-width: 1200px;
-    width: 90%;
-    margin: 0 auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    max-width: 1200px; /* Maximum width of the container */
+    width: 90%; /* Responsive width */
+    margin: 0 auto; /* Center the container horizontally */
+    background: #fff; /* White background */
+    padding: 20px; /* Inner padding */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
+/* Styling for flashed messages */
 .flash {
-    padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 6px;
-    color: #fff;
-    font-size: 1em;
-    background-color: #ccc; /* Fallback gray */
+    padding: 12px; /* Inner padding */
+    margin-bottom: 15px; /* Space below each message */
+    border-radius: 6px; /* Rounded corners */
+    color: #fff; /* White text */
+    font-size: 1em; /* Standard font size */
+    background-color: #ccc; /* Fallback gray background */
 }
 .flash.success {
-    background-color: #27ae60; /* Green */
+    background-color: #27ae60; /* Green background for success messages */
 }
 .flash.error {
-    background-color: #c0392b; /* Red */
+    background-color: #c0392b; /* Red background for error messages */
 }
 
+/* Styling for links and buttons */
 a, button {
-    text-decoration: none;
-    color: #2980b9;
-    padding: 10px 18px;
-    border: 1px solid #2980b9;
-    border-radius: 6px;
-    background: none;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-size: 1em;
-    display: inline-block;
-    margin: 8px 8px 8px 0;
+    text-decoration: none; /* Remove underline from links */
+    color: #2980b9; /* Blue text color */
+    padding: 10px 18px; /* Padding for clickable area */
+    border: 1px solid #2980b9; /* Blue border */
+    border-radius: 6px; /* Rounded corners */
+    background: none; /* Transparent background */
+    cursor: pointer; /* Hand cursor on hover */
+    transition: all 0.3s; /* Smooth transition for hover effects */
+    font-size: 1em; /* Standard font size */
+    display: inline-block; /* Inline-block for spacing */
+    margin: 8px 8px 8px 0; /* Margin around elements */
 }
 a:hover, button:hover {
-    background: #2980b9;
-    color: #fff;
+    background: #2980b9; /* Blue background on hover */
+    color: #fff; /* White text on hover */
 }
 
+/* Form styling */
 form {
-    margin: 20px 0;
+    margin: 20px 0; /* Vertical margin around forms */
 }
 label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    font-size: 1em;
+    display: block; /* Block display for labels */
+    margin-bottom: 8px; /* Space below labels */
+    font-weight: bold; /* Bold text */
+    font-size: 1em; /* Standard font size */
 }
 input[type="text"], input[type="number"], select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box;
-    font-size: 1em;
+    width: 100%; /* Full width */
+    padding: 10px; /* Inner padding */
+    margin-bottom: 12px; /* Space below inputs */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 6px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding/border in width */
+    font-size: 1em; /* Standard font size */
 }
 button[type="submit"] {
-    background: #27ae60;
-    color: #fff;
-    border: none;
+    background: #27ae60; /* Green background for submit buttons */
+    color: #fff; /* White text */
+    border: none; /* Remove border */
 }
 button[type="submit"]:hover {
-    background: #219653;
+    background: #219653; /* Darker green on hover */
 }
 
+/* Styling for preformatted text (e.g., blockchain display) */
 pre {
-    background: #ecf0f1;
-    padding: 15px;
-    border-radius: 6px;
-    overflow-x: auto;
-    font-size: 0.95em;
-    max-height: 400px;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+    background: #ecf0f1; /* Light gray background */
+    padding: 15px; /* Inner padding */
+    border-radius: 6px; /* Rounded corners */
+    overflow-x: auto; /* Horizontal scroll for overflow */
+    font-size: 0.95em; /* Slightly smaller font size */
+    max-height: 400px; /* Limit height with scroll */
+    white-space: pre-wrap; /* Wrap long lines */
+    word-wrap: break-word; /* Break long words */
 }
 
+/* Styling for unordered lists */
 ul {
-    list-style: none;
-    padding: 0;
+    list-style: none; /* Remove default bullets */
+    padding: 0; /* Remove default padding */
 }
 ul li {
-    padding: 8px 0;
-    font-size: 1em;
+    padding: 8px 0; /* Vertical padding for list items */
+    font-size: 1em; /* Standard font size */
 }
 
+/* Container for private key display */
 .private-key-container {
-    background: #ffe6e6;
-    padding: 15px;
-    border-radius: 6px;
-    margin: 20px 0;
+    background: #ffe6e6; /* Light red background */
+    padding: 15px; /* Inner padding */
+    border-radius: 6px; /* Rounded corners */
+    margin: 20px 0; /* Vertical margin */
 }
 .private-key {
-    font-family: monospace;
-    color: #c0392b;
-    font-size: 1em;
-    word-wrap: break-word;
-    display: block;
-    max-width: 100%;
+    font-family: monospace; /* Monospace font for keys */
+    color: #c0392b; /* Red text color */
+    font-size: 1em; /* Standard font size */
+    word-wrap: break-word; /* Break long words */
+    display: block; /* Block display */
+    max-width: 100%; /* Limit width */
 }
 .warning {
-    color: #e74c3c;
-    font-weight: bold;
-    margin-bottom: 10px;
-    font-size: 1em;
+    color: #e74c3c; /* Bright red for warnings */
+    font-weight: bold; /* Bold text */
+    margin-bottom: 10px; /* Space below */
+    font-size: 1em; /* Standard font size */
 }
 #countdown {
-    font-weight: bold;
-    color: #2980b9;
+    font-weight: bold; /* Bold text */
+    color: #2980b9; /* Blue color for countdown */
 }
 
+/* Styling for public keys */
 .pub-key {
-    color: #859098;
-    cursor: pointer;
-    
-    font-size: 1em;
-    word-wrap: break-word;
-    display: inline-block;
-    max-width: 100%;
+    color: #859098; /* Gray text color */
+    cursor: pointer; /* Hand cursor on hover */
+    font-size: 1em; /* Standard font size */
+    word-wrap: break-word; /* Break long words */
+    display: inline-block; /* Inline-block display */
+    max-width: 100%; /* Limit width */
 }
 .pub-key:hover {
-    color: #646a6e;
+    color: #646a6e; /* Darker gray on hover */
 }
 
-.copy-btn{
-    margin-left: 10px;
-    padding: 2px 8px;
-    border-color: #333;
-    border-radius: 6px;
-    color:#333;
+/* Styling for copy buttons */
+.copy-btn {
+    margin-left: 10px; /* Space to the left */
+    padding: 2px 8px; /* Smaller padding */
+    border-color: #333; /* Dark gray border */
+    border-radius: 6px; /* Rounded corners */
+    color: #333; /* Dark gray text */
 }
-
-.copy-btn:hover{
-    background: #8a8686;
-    color: #fff;
+.copy-btn:hover {
+    background: #8a8686; /* Gray background on hover */
+    color: #fff; /* White text on hover */
 }

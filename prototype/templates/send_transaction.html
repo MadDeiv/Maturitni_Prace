@@ -1,39 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Page title displayed in the browser tab -->
     <title>Send Transaction</title>
+    <!-- Link to external CSS stylesheet for styling -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <div class="container">
+        <!-- Page heading -->
         <h1>Send Transaction</h1>
+        
+        <!-- Display flashed messages (e.g., success or error) from the Flask backend -->
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 {% for category, message in messages %}
+                    <!-- Render each message with its category as a class (e.g., 'success', 'error') -->
                     <p class="flash {{ category }}">{{ message }}</p>
                 {% endfor %}
             {% endif %}
         {% endwith %}
+        
+        <!-- Instruction for the user -->
         <p>Enter the sender’s private key to sign the transaction.</p>
+        
+        <!-- Form for submitting a transaction -->
         <form method="post">
+            <!-- Dropdown to select the sender's public key/wallet -->
             <label for="sender_pub">Sender:</label>
             <select id="sender_pub" name="sender_pub" required>
+                <!-- Populate options dynamically from the wallets dictionary -->
                 {% for pub_key, wallet in wallets.items() %}
                     <option value="{{ pub_key }}">{{ wallet.name }}</option>
                 {% endfor %}
             </select><br>
+            
+            <!-- Input field for the sender's private key -->
             <label for="private_key">Sender Private Key:</label>
             <input type="text" id="private_key" name="private_key" required>
+            
+            <!-- Dropdown to select the receiver's public key/wallet -->
             <label for="receiver_pub">Receiver:</label>
             <select id="receiver_pub" name="receiver_pub" required>
+                <!-- Populate options dynamically from the wallets dictionary -->
                 {% for pub_key, wallet in wallets.items() %}
                     <option value="{{ pub_key }}">{{ wallet.name }}</option>
                 {% endfor %}
             </select><br>
+            
+            <!-- Input field for the transaction amount -->
             <label for="amount">Amount:</label>
             <input type="number" id="amount" name="amount" step="0.1" min="0" required>
+            
+            <!-- Submit button to send the transaction -->
             <button type="submit">Send</button>
         </form>
+        
+        <!-- Link to return to the homepage -->
         <a href="{{ url_for('index') }}">Back</a>
     </div>
 </body>

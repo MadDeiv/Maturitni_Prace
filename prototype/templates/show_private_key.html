@@ -2,35 +2,54 @@
 <html>
 <head>
     <title>Your Private Key</title>
+    <!-- Link to external CSS stylesheet for styling -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <div class="container">
+        <!-- Page heading -->
         <h1>Your New Wallet</h1>
+        
+        <!-- Display flashed messages (e.g., success or error) from the Flask backend -->
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 {% for category, message in messages %}
+                    <!-- Render each message with its category as a class (e.g., 'success', 'error') -->
                     <p class="flash {{ category }}">{{ message }}</p>
                 {% endfor %}
             {% endif %}
         {% endwith %}
+        
+        <!-- Display the wallet name -->
         <p>Wallet created: {{ wallet.name }}</p>
+        
+        <!-- Display the public key, truncated to 10 characters with a toggle option -->
         <p>Public Key: <span class="pub-key" onclick="toggleKey(this)" 
                              data-full="{{ wallet.get_public_key() }}">
             {{ wallet.get_public_key()[:10] }}...
         </span></p>
         
         <div class="private-key-container">
+            <!-- Warning message about private key security -->
             <p class="warning">WARNING: Never share your private key! Store it securely offline.</p>
+            
+            <!-- Display the private key (initially visible) -->
             <p>Your Private Key: <span id="privateKey" class="private-key">{{ private_key }}</span></p>
+            
+            <!-- Button to copy the private key to the clipboard -->
             <button onclick="copyToClipboard()">Copy to Clipboard</button>
+            
+            <!-- Countdown timer indicating when the key will be hidden -->
             <p>Key will be hidden in <span id="countdown">10</span> seconds.</p>
         </div>
         
+        <!-- Link back to the homepage -->
         <a href="{{ url_for('index') }}">Back to Home</a>
     </div>
 
+    <!-- JavaScript for interactivity -->
     <script>
+        // Function to copy the private key to the clipboard
         function copyToClipboard() {
             const privateKey = document.getElementById('privateKey').innerText;
             navigator.clipboard.writeText(privateKey).then(() => {
@@ -38,6 +57,7 @@
             });
         }
 
+        // Countdown timer to hide the private key after 10 seconds
         let timeLeft = 10;
         const countdown = document.getElementById('countdown');
         const privateKey = document.getElementById('privateKey');
@@ -46,18 +66,19 @@
             countdown.textContent = timeLeft;
             if (timeLeft <= 0) {
                 clearInterval(timer);
-                privateKey.textContent = '[Hidden for security]';
-                countdown.parentElement.style.display = 'none';
+                privateKey.textContent = '[Hidden for security]'; // Hide the key
+                countdown.parentElement.style.display = 'none';   // Hide the countdown text
             }
         }, 1000);
 
+        // Function to toggle between showing full public key or truncated version
         function toggleKey(element) {
             const fullKey = element.getAttribute('data-full');
             const currentText = element.textContent.trim();
             if (currentText.endsWith('...')) {
-                element.textContent = fullKey;
+                element.textContent = fullKey; // Show full key
             } else {
-                element.textContent = fullKey.slice(0, 10) + '...';
+                element.textContent = fullKey.slice(0, 10) + '...'; // Show truncated key
             }
         }
     </script>

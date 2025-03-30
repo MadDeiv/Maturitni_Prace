@@ -104,6 +104,7 @@ def load_blockchain():
     return render_template('load_blockchain.html')  # Render form for GET requests
 
 if __name__ == '__main__':
+    """Run the Flask application."""
     print("Starting the app...")
     try:
         print("Creating genesis block...")

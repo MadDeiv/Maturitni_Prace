@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Page title displayed in the browser tab -->
     <title>Check Balance</title>
+    <!-- Link to external CSS stylesheet for styling -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <div class="container">
+        <!-- Page heading -->
         <h1>Check Wallet Balance</h1>
+        
+        <!-- Display flashed messages (e.g., success or error) from the Flask backend -->
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 {% for category, message in messages %}
+                    <!-- Render each message with its category as a class (e.g., 'success', 'error') -->
                     <p class="flash {{ category }}">{{ message }}</p>
                 {% endfor %}
             {% endif %}
         {% endwith %}
+        
+        <!-- Form for checking the balance of a wallet -->
         <form method="post">
+            <!-- Input field for the public key -->
             <label for="public_key">Public Key:</label>
             <input type="text" id="public_key" name="public_key" required>
+            
+            <!-- Submit button to check the balance -->
             <button type="submit">Check</button>
         </form>
+        
+        <!-- Link to return to the homepage -->
         <a href="{{ url_for('index') }}">Back</a>
     </div>
 </body>
