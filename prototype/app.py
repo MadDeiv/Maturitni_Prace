@@ -104,7 +104,12 @@ def load_blockchain():
     return render_template('load_blockchain.html')  # Render form for GET requests
 
 if __name__ == '__main__':
-    """Entry point for running the application."""
     print("Starting the app...")
-    blockchain.genesis_block()  # Create the genesis block when the app starts
-    app.run(debug=True)  # Run the Flask app in debug mode on localhost:5000
+    try:
+        print("Creating genesis block...")
+        blockchain.genesis_block()
+        print("Genesis block created successfully")
+        print("Starting Flask server...")
+        app.run(debug=True)
+    except Exception as e:
+        print(f"Error occurred: {e}")
