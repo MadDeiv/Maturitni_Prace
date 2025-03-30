@@ -21,7 +21,7 @@
                 {% for pub_key, wallet in wallets.items() %}
                     <option value="{{ pub_key }}">{{ wallet.name }}</option>
                 {% endfor %}
-            </select>
+            </select><br>
             <label for="private_key">Sender Private Key:</label>
             <input type="text" id="private_key" name="private_key" required>
             <label for="receiver_pub">Receiver:</label>
@@ -29,7 +29,7 @@
                 {% for pub_key, wallet in wallets.items() %}
                     <option value="{{ pub_key }}">{{ wallet.name }}</option>
                 {% endfor %}
-            </select>
+            </select><br>
             <label for="amount">Amount:</label>
             <input type="number" id="amount" name="amount" step="0.1" min="0" required>
             <button type="submit">Send</button>
